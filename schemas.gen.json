@@ -82,6 +82,24 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
+              "deco-sites/std/sections/Analytics.tsx",
+              "deco-sites/std/sections/configButterCMS.global.tsx",
+              "deco-sites/std/sections/configOCC.global.tsx",
+              "deco-sites/std/sections/configShopify.global.tsx",
+              "deco-sites/std/sections/configVNDA.global.tsx",
+              "deco-sites/std/sections/configVTEX.global.tsx",
+              "deco-sites/std/sections/configYourViews.global.tsx",
+              "deco-sites/std/sections/SEO.tsx",
+              "deco-sites/std/sections/SEOPDP.tsx",
+              "deco-sites/std/sections/SEOPLP.tsx",
+              "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx",
+              "deco-sites/suzteclibrary/sections/Austral/BannerAustral.tsx",
+              "deco-sites/suzteclibrary/sections/Austral/Card.tsx",
+              "deco-sites/suzteclibrary/sections/Austral/CardPlusShelf.tsx",
+              "deco-sites/suzteclibrary/sections/Austral/CardsCarousel.tsx",
+              "deco-sites/suzteclibrary/sections/Austral/Highlights.tsx",
+              "deco-sites/suzteclibrary/sections/Austral/Instafeed.tsx",
+              "deco-sites/suzteclibrary/sections/Austral/SeoText.tsx",
               "deco-sites/suzteclibrary/sections/Category/CategoryBanner.tsx",
               "deco-sites/suzteclibrary/sections/Category/CategoryList.tsx",
               "deco-sites/suzteclibrary/sections/Content/Benefits.tsx",
@@ -106,17 +124,6 @@
               "deco-sites/suzteclibrary/sections/Product/Wishlist.tsx",
               "deco-sites/suzteclibrary/sections/Social/InstagramPosts.tsx",
               "deco-sites/suzteclibrary/sections/Social/WhatsApp.tsx",
-              "deco-sites/std/sections/Analytics.tsx",
-              "deco-sites/std/sections/configButterCMS.global.tsx",
-              "deco-sites/std/sections/configOCC.global.tsx",
-              "deco-sites/std/sections/configShopify.global.tsx",
-              "deco-sites/std/sections/configVNDA.global.tsx",
-              "deco-sites/std/sections/configVTEX.global.tsx",
-              "deco-sites/std/sections/configYourViews.global.tsx",
-              "deco-sites/std/sections/SEO.tsx",
-              "deco-sites/std/sections/SEOPDP.tsx",
-              "deco-sites/std/sections/SEOPLP.tsx",
-              "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx",
               "$live/matchers/MatchAlways.ts",
               "$live/matchers/MatchDate.ts",
               "$live/matchers/MatchDevice.ts",
@@ -7253,10 +7260,903 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "trackingIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "google tag manager container id. For more info: https://developers.google.com/tag-platform/tag-manager/web#standard_web_page_installation .",
+          "title": "Tracking Ids"
+        },
+        "src": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "custom url for serving google tag manager. Set either this url or the tracking id",
+          "title": "Src"
+        },
+        "dangerouslyRunOnMainThread": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "run GTM directly on the main thread, without Partytown. This is useful for debugging purposes. Default: false",
+          "title": "Dangerously Run On Main Thread"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/std/components/Analytics.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Locale"
+        },
+        "authToken": {
+          "type": "string",
+          "title": "Auth Token"
+        }
+      },
+      "required": [
+        "label",
+        "authToken"
+      ],
+      "title": "Locale"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale"
+      },
+      "title": "Locale[]"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@ConfigButterCMS": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
+        }
+      ],
+      "properties": {
+        "locales": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale[]",
+          "title": "Locales"
+        },
+        "defaultLocale": {
+          "type": "string",
+          "description": "Default value: en-us",
+          "default": "en-us",
+          "title": "Default Locale"
+        },
+        "apiVersion": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Default value: v2",
+          "default": "v2",
+          "title": "Api Version"
+        }
+      },
+      "required": [
+        "locales",
+        "defaultLocale"
+      ],
+      "title": "deco-sites/std/commerce/butterCMS/client.ts@ConfigButterCMS"
+    },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
       "type": "string",
       "format": "image-uri",
       "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null|ProductListingPage|null": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null"
+        }
+      ],
+      "title": "ProductDetailsPage|null|ProductListingPage|null"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vdHlwZXMudHM=@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "titleTemplate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title template",
+          "description": "add a %s whenever you want it to be replaced with the category name or search term",
+          "default": "%s | Deco.cx"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "website"
+            },
+            {
+              "type": "string",
+              "const": "article"
+            }
+          ],
+          "type": "string",
+          "default": "website",
+          "title": "Type"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Recommended: 1200 x 630 px (up to 5MB)",
+          "title": "Image"
+        },
+        "favicon": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Recommended: 16 x 16 px",
+          "title": "Favicon"
+        },
+        "themeColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Suggested color that browsers should use to customize the display of the page or of the surrounding user interface",
+          "title": "Theme Color"
+        },
+        "canonical": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Canonical URL"
+        },
+        "noIndexNoFollow": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Disable indexing",
+          "description": "In testing, you can use this to prevent search engines from indexing your site"
+        },
+        "context": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null|ProductListingPage|null",
+          "title": "Context"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/std/components/seo/types.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUERQLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "titleTemplate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title template",
+          "description": "add a %s whenever you want it to be replaced with the product name",
+          "default": "%s | Deco.cx"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Page title override"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Meta tag description override"
+        },
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null",
+          "title": "Page"
+        }
+      },
+      "required": [
+        "page"
+      ],
+      "title": "deco-sites/std/components/seo/SEOPDP.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUExQLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "title": "Page"
+        },
+        "titleTemplate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title template",
+          "description": "add a %s whenever you want it to be replaced with the product name",
+          "default": "%s | Deco.cx"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Page title override"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Meta tag description override"
+        }
+      },
+      "required": [
+        "page"
+      ],
+      "title": "deco-sites/std/components/seo/SEOPLP.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvVlRFWFBvcnRhbERhdGFMYXllckNvbXBhdGliaWxpdHkudHN4@LoaderProps": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3JlcXVlc3RUb1BhcmFtLnRz@RequestURLParam",
+          "title": "Slug"
+        }
+      },
+      "required": [
+        "slug"
+      ],
+      "title": "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx@LoaderProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@ImageProps": {
+      "type": "object",
+      "properties": {
+        "imageMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Seu banner Mobile",
+          "title": "Image Mobile"
+        },
+        "imageDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Seu banner Desktop",
+          "title": "Image Desktop"
+        },
+        "altImage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Texto Alternativo",
+          "title": "Alt Image"
+        },
+        "hrefImage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Link para redirecionar",
+          "title": "Href Image"
+        }
+      },
+      "required": [
+        "imageMobile",
+        "imageDesktop"
+      ],
+      "title": "ImageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@VideoProps": {
+      "type": "object",
+      "properties": {
+        "videoPlatform": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Vimeo"
+            },
+            {
+              "type": "string",
+              "const": "Youtube"
+            }
+          ],
+          "type": "string",
+          "title": "Video Platform"
+        },
+        "videoUrlCodeMobile": {
+          "type": "string",
+          "description": "o código do vídeo que fica no final da url ex: 539309773",
+          "title": "Video Url Code Mobile"
+        },
+        "videoUrlCodeDesktop": {
+          "type": "string",
+          "description": "o código do vídeo que fica no final da url ex: 539309773",
+          "title": "Video Url Code Desktop"
+        },
+        "title": {
+          "type": "string",
+          "description": "O título do seu vídeo",
+          "title": "Title"
+        }
+      },
+      "required": [
+        "videoPlatform",
+        "videoUrlCodeMobile",
+        "videoUrlCodeDesktop",
+        "title"
+      ],
+      "title": "VideoProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@ImageProps|VideoProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@ImageProps"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@VideoProps"
+        }
+      ],
+      "title": "ImageProps|VideoProps"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
+      "type": "string",
+      "format": "html",
+      "title": "HTML"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Title": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Text"
+        },
+        "font": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "lusitana"
+            },
+            {
+              "type": "string",
+              "const": "nunito-sans"
+            },
+            {
+              "type": "string",
+              "const": "Roboto-ligth"
+            },
+            {
+              "type": "string",
+              "const": "Palatino"
+            }
+          ],
+          "type": "string",
+          "title": "Font"
+        }
+      },
+      "required": [
+        "text",
+        "font"
+      ],
+      "title": "Title"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Title[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Title"
+      },
+      "title": "Title[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Button": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Texto do botão",
+          "title": "Text"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Link do botão",
+          "title": "Href"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "blue"
+            },
+            {
+              "type": "string",
+              "const": "black"
+            },
+            {
+              "type": "string",
+              "const": "white"
+            },
+            {
+              "type": "string",
+              "const": "transparent"
+            },
+            {
+              "type": "string",
+              "const": "link"
+            }
+          ],
+          "type": "string",
+          "description": "Cor do botão",
+          "title": "Color"
+        }
+      },
+      "required": [
+        "color"
+      ],
+      "title": "Button"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Button[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Button"
+      },
+      "title": "Button[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Content": {
+      "type": "object",
+      "properties": {
+        "where": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Dentro"
+            },
+            {
+              "type": "string",
+              "const": "Fora"
+            }
+          ],
+          "type": "string",
+          "description": "Dentro ou fora da imagem?",
+          "title": "Where"
+        },
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Title[]",
+          "description": "Textos",
+          "title": "Title"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "center"
+            },
+            {
+              "type": "string",
+              "const": "left"
+            },
+            {
+              "type": "string",
+              "const": "right"
+            }
+          ],
+          "type": "string",
+          "description": "Alinhamento dos botões",
+          "title": "Align"
+        },
+        "verticalAlign": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "center"
+            },
+            {
+              "type": "string",
+              "const": "top"
+            },
+            {
+              "type": "string",
+              "const": "bottom"
+            }
+          ],
+          "type": "string",
+          "description": "Alinhamento vertical",
+          "title": "Vertical Align"
+        },
+        "buttons": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Button[]",
+          "description": "Botões",
+          "title": "Buttons"
+        }
+      },
+      "required": [],
+      "title": "Content"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Padding": {
+      "type": "object",
+      "properties": {
+        "paddingLeft": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Margem interna esquerda",
+          "title": "Padding Left"
+        },
+        "paddingRight": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Margem interna direita",
+          "title": "Padding Right"
+        },
+        "paddingTop": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Margem interna cima",
+          "title": "Padding Top"
+        },
+        "paddingBottom": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Margem interna baixo",
+          "title": "Padding Bottom"
+        }
+      },
+      "required": [],
+      "title": "Padding"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Creative": {
+      "type": "object",
+      "properties": {
+        "creative": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@ImageProps|VideoProps",
+          "title": "Creative"
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "content": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Content",
+          "description": "Textos e Botões",
+          "title": "Content"
+        },
+        "padding": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Padding",
+          "description": "Margem interna",
+          "title": "Padding"
+        }
+      },
+      "required": [
+        "creative"
+      ],
+      "title": "Creative"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Creative[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Creative"
+      },
+      "title": "Creative[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Carousel": {
+      "type": "object",
+      "properties": {
+        "autoplay": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Autoplay"
+        },
+        "interval": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Intervalo de tempo para o Carrossel",
+          "title": "Interval"
+        }
+      },
+      "required": [],
+      "title": "Carousel"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Column": {
+      "type": "object",
+      "properties": {
+        "creativeCarousel": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Creative[]",
+          "description": "Suas imagens e vídeos",
+          "title": "Creative Carousel"
+        },
+        "carouselOptions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Carousel",
+          "description": "Carrossel automático",
+          "title": "Carousel Options"
+        }
+      },
+      "required": [
+        "creativeCarousel"
+      ],
+      "title": "Column"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "column": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Column",
+          "description": "Colunas",
+          "title": "Column"
+        },
+        "maxWidth": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Largura máxima total",
+          "title": "Max Width"
+        },
+        "fullScreen": {
+          "type": "boolean",
+          "description": "Tela cheia",
+          "title": "Full Screen"
+        },
+        "isFirstBanner": {
+          "type": "boolean",
+          "description": "Banner Principal",
+          "title": "Is First Banner"
+        },
+        "borderRadius": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Bordas arredondadas",
+          "title": "Border Radius"
+        }
+      },
+      "required": [
+        "column",
+        "fullScreen",
+        "isFirstBanner"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/BannerAustral.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "callToAction": {
+          "type": "string",
+          "title": "Call To Action"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "image",
+        "title",
+        "description",
+        "callToAction",
+        "href"
+      ],
+      "title": "Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZFBsdXNTaGVsZi50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "card": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZC50c3g=@Props",
+          "title": "Card"
+        },
+        "productShelf": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section",
+          "title": "Product Shelf"
+        }
+      },
+      "required": [
+        "card",
+        "productShelf"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/CardPlusShelf.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZC50c3g=@Props[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZC50c3g=@Props"
+      },
+      "title": "Props[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZHNDYXJvdXNlbC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Title"
+        },
+        "cards": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZC50c3g=@Props[]",
+          "title": "Cards"
+        }
+      },
+      "required": [
+        "title",
+        "cards"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/CardsCarousel.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "label": {
+          "type": "string",
+          "title": "Label"
+        }
+      },
+      "required": [
+        "src",
+        "alt",
+        "href",
+        "label"
+      ],
+      "title": "Highlight"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight"
+      },
+      "title": "Highlight[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "highlights": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight[]",
+          "title": "Highlights"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/Highlights.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSW5zdGFmZWVkLnRzeA==@InstagramImage": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "altText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Alt Text"
+        }
+      },
+      "required": [
+        "image",
+        "href"
+      ],
+      "title": "InstagramImage"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSW5zdGFmZWVkLnRzeA==@InstagramImage[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSW5zdGFmZWVkLnRzeA==@InstagramImage"
+      },
+      "title": "InstagramImage[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSW5zdGFmZWVkLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "images": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSW5zdGFmZWVkLnRzeA==@InstagramImage[]",
+          "title": "Images"
+        },
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Title"
+        }
+      },
+      "required": [
+        "images",
+        "title"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/Instafeed.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvU2VvVGV4dC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Text"
+        },
+        "ctaText": {
+          "type": "string",
+          "title": "Cta Text"
+        },
+        "ctaLink": {
+          "type": "string",
+          "title": "Cta Link"
+        }
+      },
+      "required": [
+        "text",
+        "ctaText",
+        "ctaLink"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/SeoText.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyUExQLnRzeA==@Banner": {
       "type": "object",
@@ -9933,11 +10833,6 @@
       "required": [],
       "title": "deco-sites/suzteclibrary/sections/Links/Shortcuts.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
-      "type": "string",
-      "format": "html",
-      "title": "HTML"
-    },
     "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL01pc2NlbGxhbmVvdXMvQ2FtcGFpZ25UaW1lci50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -10676,274 +11571,6 @@
       },
       "required": [],
       "title": "deco-sites/suzteclibrary/components/ui/WhatsApp.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "trackingIds": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "google tag manager container id. For more info: https://developers.google.com/tag-platform/tag-manager/web#standard_web_page_installation .",
-          "title": "Tracking Ids"
-        },
-        "src": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "custom url for serving google tag manager. Set either this url or the tracking id",
-          "title": "Src"
-        },
-        "dangerouslyRunOnMainThread": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "description": "run GTM directly on the main thread, without Partytown. This is useful for debugging purposes. Default: false",
-          "title": "Dangerously Run On Main Thread"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/std/components/Analytics.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "type": "string",
-          "title": "Locale"
-        },
-        "authToken": {
-          "type": "string",
-          "title": "Auth Token"
-        }
-      },
-      "required": [
-        "label",
-        "authToken"
-      ],
-      "title": "Locale"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale"
-      },
-      "title": "Locale[]"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@ConfigButterCMS": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9hY2NvdW50LnRz@Account"
-        }
-      ],
-      "properties": {
-        "locales": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@Locale[]",
-          "title": "Locales"
-        },
-        "defaultLocale": {
-          "type": "string",
-          "description": "Default value: en-us",
-          "default": "en-us",
-          "title": "Default Locale"
-        },
-        "apiVersion": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Default value: v2",
-          "default": "v2",
-          "title": "Api Version"
-        }
-      },
-      "required": [
-        "locales",
-        "defaultLocale"
-      ],
-      "title": "deco-sites/std/commerce/butterCMS/client.ts@ConfigButterCMS"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null|ProductListingPage|null": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null"
-        }
-      ],
-      "title": "ProductDetailsPage|null|ProductListingPage|null"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vdHlwZXMudHM=@Props": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title"
-        },
-        "titleTemplate": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title template",
-          "description": "add a %s whenever you want it to be replaced with the category name or search term",
-          "default": "%s | Deco.cx"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Description"
-        },
-        "type": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "website"
-            },
-            {
-              "type": "string",
-              "const": "article"
-            }
-          ],
-          "type": "string",
-          "default": "website",
-          "title": "Type"
-        },
-        "image": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "description": "Recommended: 1200 x 630 px (up to 5MB)",
-          "title": "Image"
-        },
-        "favicon": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "description": "Recommended: 16 x 16 px",
-          "title": "Favicon"
-        },
-        "themeColor": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "Suggested color that browsers should use to customize the display of the page or of the surrounding user interface",
-          "title": "Theme Color"
-        },
-        "canonical": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Canonical URL"
-        },
-        "noIndexNoFollow": {
-          "type": [
-            "boolean",
-            "null"
-          ],
-          "title": "Disable indexing",
-          "description": "In testing, you can use this to prevent search engines from indexing your site"
-        },
-        "context": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null|ProductListingPage|null",
-          "title": "Context"
-        }
-      },
-      "required": [],
-      "title": "deco-sites/std/components/seo/types.ts@Props"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUERQLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "titleTemplate": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title template",
-          "description": "add a %s whenever you want it to be replaced with the product name",
-          "default": "%s | Deco.cx"
-        },
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Page title override"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Meta tag description override"
-        },
-        "page": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null",
-          "title": "Page"
-        }
-      },
-      "required": [
-        "page"
-      ],
-      "title": "deco-sites/std/components/seo/SEOPDP.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUExQLnRzeA==@Props": {
-      "type": "object",
-      "properties": {
-        "page": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
-          "title": "Page"
-        },
-        "titleTemplate": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Title template",
-          "description": "add a %s whenever you want it to be replaced with the product name",
-          "default": "%s | Deco.cx"
-        },
-        "title": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Page title override"
-        },
-        "description": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "Meta tag description override"
-        }
-      },
-      "required": [
-        "page"
-      ],
-      "title": "deco-sites/std/components/seo/SEOPLP.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvVlRFWFBvcnRhbERhdGFMYXllckNvbXBhdGliaWxpdHkudHN4@LoaderProps": {
-      "type": "object",
-      "properties": {
-        "slug": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3JlcXVlc3RUb1BhcmFtLnRz@RequestURLParam",
-          "title": "Slug"
-        }
-      },
-      "required": [
-        "slug"
-      ],
-      "title": "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx@LoaderProps"
     },
     "ZGVjby1jeC9saXZlL21hdGNoZXJzL01hdGNoRGF0ZS50cw==@Props": {
       "type": "object",
@@ -13150,6 +13777,379 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA==": {
+      "title": "deco-sites/std/sections/Analytics.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/Analytics.tsx"
+          ],
+          "default": "deco-sites/std/sections/Analytics.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnQnV0dGVyQ01TLmdsb2JhbC50c3g=": {
+      "title": "deco-sites/std/sections/configButterCMS.global.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@ConfigButterCMS"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/configButterCMS.global.tsx"
+          ],
+          "default": "deco-sites/std/sections/configButterCMS.global.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnT0NDLmdsb2JhbC50c3g=": {
+      "title": "deco-sites/std/sections/configOCC.global.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvb2NjL2NsaWVudC50cw==@ConfigOCC"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/configOCC.global.tsx"
+          ],
+          "default": "deco-sites/std/sections/configOCC.global.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnU2hvcGlmeS5nbG9iYWwudHN4": {
+      "title": "deco-sites/std/sections/configShopify.global.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvc2hvcGlmeS9jbGllbnQudHM=@ConfigShopify"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/configShopify.global.tsx"
+          ],
+          "default": "deco-sites/std/sections/configShopify.global.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnVk5EQS5nbG9iYWwudHN4": {
+      "title": "deco-sites/std/sections/configVNDA.global.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvdm5kYS90eXBlcy50cw==@ConfigVNDA"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/configVNDA.global.tsx"
+          ],
+          "default": "deco-sites/std/sections/configVNDA.global.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnVlRFWC5nbG9iYWwudHN4": {
+      "title": "deco-sites/std/sections/configVTEX.global.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY2NvdW50cy92dGV4LnRz@Account"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/configVTEX.global.tsx"
+          ],
+          "default": "deco-sites/std/sections/configVTEX.global.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnWW91clZpZXdzLmdsb2JhbC50c3g=": {
+      "title": "deco-sites/std/sections/configYourViews.global.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/configYourViews.global.tsx"
+          ],
+          "default": "deco-sites/std/sections/configYourViews.global.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPLnRzeA==": {
+      "title": "deco-sites/std/sections/SEO.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vdHlwZXMudHM=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/SEO.tsx"
+          ],
+          "default": "deco-sites/std/sections/SEO.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPUERQLnRzeA==": {
+      "title": "deco-sites/std/sections/SEOPDP.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUERQLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/SEOPDP.tsx"
+          ],
+          "default": "deco-sites/std/sections/SEOPDP.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPUExQLnRzeA==": {
+      "title": "deco-sites/std/sections/SEOPLP.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUExQLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/SEOPLP.tsx"
+          ],
+          "default": "deco-sites/std/sections/SEOPLP.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvVlRFWFBvcnRhbERhdGFMYXllckNvbXBhdGliaWxpdHkudHN4": {
+      "title": "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvVlRFWFBvcnRhbERhdGFMYXllckNvbXBhdGliaWxpdHkudHN4@LoaderProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx"
+          ],
+          "default": "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvQmFubmVyQXVzdHJhbC50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Austral/BannerAustral.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Austral/BannerAustral.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Austral/BannerAustral.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvQ2FyZC50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Austral/Card.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Austral/Card.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Austral/Card.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvQ2FyZFBsdXNTaGVsZi50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Austral/CardPlusShelf.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZFBsdXNTaGVsZi50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Austral/CardPlusShelf.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Austral/CardPlusShelf.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvQ2FyZHNDYXJvdXNlbC50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Austral/CardsCarousel.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZHNDYXJvdXNlbC50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Austral/CardsCarousel.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Austral/CardsCarousel.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvSGlnaGxpZ2h0cy50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Austral/Highlights.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Austral/Highlights.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Austral/Highlights.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvSW5zdGFmZWVkLnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Austral/Instafeed.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSW5zdGFmZWVkLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Austral/Instafeed.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Austral/Instafeed.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvU2VvVGV4dC50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Austral/SeoText.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvU2VvVGV4dC50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Austral/SeoText.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Austral/SeoText.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5QmFubmVyLnRzeA==": {
       "title": "deco-sites/suzteclibrary/sections/Category/CategoryBanner.tsx",
       "type": "object",
@@ -13651,237 +14651,6 @@
             "deco-sites/suzteclibrary/sections/Social/WhatsApp.tsx"
           ],
           "default": "deco-sites/suzteclibrary/sections/Social/WhatsApp.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA==": {
-      "title": "deco-sites/std/sections/Analytics.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/Analytics.tsx"
-          ],
-          "default": "deco-sites/std/sections/Analytics.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnQnV0dGVyQ01TLmdsb2JhbC50c3g=": {
-      "title": "deco-sites/std/sections/configButterCMS.global.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL2NsaWVudC50cw==@ConfigButterCMS"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/configButterCMS.global.tsx"
-          ],
-          "default": "deco-sites/std/sections/configButterCMS.global.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnT0NDLmdsb2JhbC50c3g=": {
-      "title": "deco-sites/std/sections/configOCC.global.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvb2NjL2NsaWVudC50cw==@ConfigOCC"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/configOCC.global.tsx"
-          ],
-          "default": "deco-sites/std/sections/configOCC.global.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnU2hvcGlmeS5nbG9iYWwudHN4": {
-      "title": "deco-sites/std/sections/configShopify.global.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvc2hvcGlmeS9jbGllbnQudHM=@ConfigShopify"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/configShopify.global.tsx"
-          ],
-          "default": "deco-sites/std/sections/configShopify.global.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnVk5EQS5nbG9iYWwudHN4": {
-      "title": "deco-sites/std/sections/configVNDA.global.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2Uvdm5kYS90eXBlcy50cw==@ConfigVNDA"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/configVNDA.global.tsx"
-          ],
-          "default": "deco-sites/std/sections/configVNDA.global.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnVlRFWC5nbG9iYWwudHN4": {
-      "title": "deco-sites/std/sections/configVTEX.global.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY2NvdW50cy92dGV4LnRz@Account"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/configVTEX.global.tsx"
-          ],
-          "default": "deco-sites/std/sections/configVTEX.global.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnWW91clZpZXdzLmdsb2JhbC50c3g=": {
-      "title": "deco-sites/std/sections/configYourViews.global.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UveW91clZpZXdzL2NsaWVudC50cw==@ConfigYourViews"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/configYourViews.global.tsx"
-          ],
-          "default": "deco-sites/std/sections/configYourViews.global.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPLnRzeA==": {
-      "title": "deco-sites/std/sections/SEO.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vdHlwZXMudHM=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/SEO.tsx"
-          ],
-          "default": "deco-sites/std/sections/SEO.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPUERQLnRzeA==": {
-      "title": "deco-sites/std/sections/SEOPDP.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUERQLnRzeA==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/SEOPDP.tsx"
-          ],
-          "default": "deco-sites/std/sections/SEOPDP.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPUExQLnRzeA==": {
-      "title": "deco-sites/std/sections/SEOPLP.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9zZW8vU0VPUExQLnRzeA==@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/SEOPLP.tsx"
-          ],
-          "default": "deco-sites/std/sections/SEOPLP.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvVlRFWFBvcnRhbERhdGFMYXllckNvbXBhdGliaWxpdHkudHN4": {
-      "title": "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvVlRFWFBvcnRhbERhdGFMYXllckNvbXBhdGliaWxpdHkudHN4@LoaderProps"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx"
-          ],
-          "default": "deco-sites/std/sections/VTEXPortalDataLayerCompatibility.tsx"
         }
       }
     },
@@ -14810,6 +15579,60 @@
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnQnV0dGVyQ01TLmdsb2JhbC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnT0NDLmdsb2JhbC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnU2hvcGlmeS5nbG9iYWwudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnVk5EQS5nbG9iYWwudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnVlRFWC5nbG9iYWwudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnWW91clZpZXdzLmdsb2JhbC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPUERQLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPUExQLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvVlRFWFBvcnRhbERhdGFMYXllckNvbXBhdGliaWxpdHkudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvQmFubmVyQXVzdHJhbC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvQ2FyZC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvQ2FyZFBsdXNTaGVsZi50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvQ2FyZHNDYXJvdXNlbC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvSGlnaGxpZ2h0cy50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvSW5zdGFmZWVkLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvU2VvVGV4dC50c3g="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5QmFubmVyLnRzeA=="
         },
         {
@@ -14880,39 +15703,6 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL1NvY2lhbC9XaGF0c0FwcC50c3g="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnQnV0dGVyQ01TLmdsb2JhbC50c3g="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnT0NDLmdsb2JhbC50c3g="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnU2hvcGlmeS5nbG9iYWwudHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnVk5EQS5nbG9iYWwudHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnVlRFWC5nbG9iYWwudHN4"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvY29uZmlnWW91clZpZXdzLmdsb2JhbC50c3g="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPLnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPUERQLnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvU0VPUExQLnRzeA=="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvVlRFWFBvcnRhbERhdGFMYXllckNvbXBhdGliaWxpdHkudHN4"
         }
       ]
     },
