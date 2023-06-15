@@ -61,9 +61,12 @@
               "deco-sites/std/loaders/vtex/user.ts",
               "deco-sites/std/loaders/vtex/wishlist.ts",
               "./islands/AddToCartButton.tsx",
+              "./islands/BackToTop.tsx",
+              "./islands/BannerCategory.tsx",
               "./islands/HeaderButton.tsx",
               "./islands/HeaderModals.tsx",
               "./islands/HeaderSearchbar.tsx",
+              "./islands/HeroSection.tsx",
               "./islands/Newsletter.tsx",
               "./islands/OutOfStock.tsx",
               "./islands/ProductImageZoom.tsx",
@@ -99,7 +102,34 @@
               "deco-sites/suzteclibrary/sections/Austral/CardsCarousel.tsx",
               "deco-sites/suzteclibrary/sections/Austral/Highlights.tsx",
               "deco-sites/suzteclibrary/sections/Austral/Instafeed.tsx",
+              "deco-sites/suzteclibrary/sections/Austral/MyAccount.tsx",
               "deco-sites/suzteclibrary/sections/Austral/SeoText.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoar.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarMoreInfo.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarPartners.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarSubscribe.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarTextBlock.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarTextWithImage.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/BackToTop.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/BannerAviator.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/BannerCategory.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/BannerContentHorizontal.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/BannerContentMult.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/BannerDobble.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/BannerInstitucional.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/BannerSingle.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/BannerVideo.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/BannerWithCTA.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/CarouselCategoryCardsSection.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/Conditional.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/ContentBlockEditor.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/HeroBanner.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/HeroSection.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/PluginVlibras.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/ProductDetailsSection.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/SearchControls.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/SearchNotFound.tsx",
+              "deco-sites/suzteclibrary/sections/Aviator/ZendeskIntegration.tsx",
               "deco-sites/suzteclibrary/sections/Category/CategoryBanner.tsx",
               "deco-sites/suzteclibrary/sections/Category/CategoryList.tsx",
               "deco-sites/suzteclibrary/sections/Content/Benefits.tsx",
@@ -6860,6 +6890,358 @@
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
     },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@SectionProps": {
+      "title": "deco-cx/live/blocks/section.ts@SectionProps"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Video": {
+      "type": "string",
+      "format": "video-uri",
+      "title": "Video"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@VideoProps": {
+      "type": "object",
+      "properties": {
+        "videoMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Video",
+          "description": "ID of video mobile",
+          "title": "Video Mobile"
+        },
+        "videoDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Video",
+          "description": "ID of video desktop",
+          "title": "Video Desktop"
+        }
+      },
+      "required": [
+        "videoMobile",
+        "videoDesktop"
+      ],
+      "title": "VideoProps"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@ImageProps": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": "object",
+          "properties": {
+            "banner": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Banner"
+            },
+            "imageWidth": {
+              "type": "number",
+              "title": "Image Width"
+            },
+            "imageHeight": {
+              "type": "number",
+              "title": "Image Height"
+            }
+          },
+          "required": [
+            "banner",
+            "imageWidth",
+            "imageHeight"
+          ],
+          "title": "Mobile",
+          "description": "Seu banner Mobile"
+        },
+        "desktop": {
+          "type": "object",
+          "properties": {
+            "banner": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Banner"
+            },
+            "imageWidth": {
+              "type": "number",
+              "title": "Image Width"
+            },
+            "imageHeight": {
+              "type": "number",
+              "title": "Image Height"
+            }
+          },
+          "required": [
+            "banner",
+            "imageWidth",
+            "imageHeight"
+          ],
+          "title": "Desktop",
+          "description": "Seu banner Desktop"
+        }
+      },
+      "required": [
+        "mobile",
+        "desktop"
+      ],
+      "title": "ImageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@ImageProps|VideoProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@VideoProps"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@ImageProps"
+        }
+      ],
+      "title": "ImageProps|VideoProps"
+    },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
+      "type": "string",
+      "format": "html",
+      "title": "HTML"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@Button": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "link": {
+          "type": "string",
+          "title": "Link"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "blue"
+            },
+            {
+              "type": "string",
+              "const": "white"
+            },
+            {
+              "type": "string",
+              "const": "black"
+            },
+            {
+              "type": "string",
+              "const": "outline"
+            }
+          ],
+          "type": "string",
+          "title": "Variant"
+        }
+      },
+      "required": [
+        "title",
+        "link",
+        "variant"
+      ],
+      "title": "Button"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@Button[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@Button"
+      },
+      "title": "Button[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@CTAProps": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "object",
+          "properties": {
+            "richtext": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+              "title": "Richtext"
+            },
+            "sizeDesktop": {
+              "type": "string",
+              "title": "Size Desktop"
+            },
+            "sizeMobile": {
+              "type": "string",
+              "title": "Size Mobile"
+            },
+            "lineHeightDesktop": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Line Height Desktop"
+            },
+            "lineHeightMobile": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Line Height Mobile"
+            },
+            "moreStyles": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "More Styles"
+            }
+          },
+          "required": [
+            "richtext",
+            "sizeDesktop",
+            "sizeMobile"
+          ],
+          "title": "Title"
+        },
+        "subTitle": {
+          "type": "object",
+          "properties": {
+            "showSubtitle": {
+              "type": "boolean",
+              "title": "Show Subtitle"
+            },
+            "richtext": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+              "title": "Richtext"
+            },
+            "sizeDesktop": {
+              "type": "string",
+              "title": "Size Desktop"
+            },
+            "sizeMobile": {
+              "type": "string",
+              "title": "Size Mobile"
+            },
+            "lineHeightDesktop": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Line Height Desktop"
+            },
+            "lineHeightMobile": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Line Height Mobile"
+            },
+            "moreStyles": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "More Styles"
+            }
+          },
+          "required": [
+            "showSubtitle",
+            "richtext",
+            "sizeDesktop",
+            "sizeMobile"
+          ],
+          "title": "Sub Title"
+        },
+        "TitleFont": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Nunito"
+            },
+            {
+              "type": "string",
+              "const": "Lusitana"
+            }
+          ],
+          "type": "string",
+          "title": " Title Font"
+        },
+        "buttons": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@Button[]",
+          "title": "Buttons"
+        },
+        "position": {
+          "type": "object",
+          "properties": {
+            "vertical": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "bottom"
+                },
+                {
+                  "type": "string",
+                  "const": "center"
+                }
+              ],
+              "type": "string",
+              "title": "Vertical"
+            },
+            "horizontal": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "left"
+                },
+                {
+                  "type": "string",
+                  "const": "center"
+                },
+                {
+                  "type": "string",
+                  "const": "right"
+                }
+              ],
+              "type": "string",
+              "title": "Horizontal"
+            }
+          },
+          "required": [
+            "vertical",
+            "horizontal"
+          ],
+          "title": "Position"
+        },
+        "bannerHref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Banner Href"
+        },
+        "bannerMoreStyles": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Banner More Styles"
+        }
+      },
+      "required": [
+        "title",
+        "TitleFont",
+        "buttons",
+        "position"
+      ],
+      "title": "CTAProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@Props": {
+      "type": "object",
+      "properties": {
+        "media": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@ImageProps|VideoProps",
+          "title": "Media"
+        },
+        "cta": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@CTAProps",
+          "title": "Cta"
+        }
+      },
+      "required": [
+        "media",
+        "cta"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/HeroSection.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvZm9vdGVyL05ld3NsZXR0ZXIudHN4@Form": {
       "type": "object",
       "properties": {
@@ -7350,11 +7732,6 @@
       ],
       "title": "deco-sites/std/commerce/butterCMS/client.ts@ConfigButterCMS"
     },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri",
-      "title": "Image"
-    },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null|ProductListingPage|null": {
       "anyOf": [
         {
@@ -7620,11 +7997,6 @@
         }
       ],
       "title": "ImageProps|VideoProps"
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML": {
-      "type": "string",
-      "format": "html",
-      "title": "HTML"
     },
     "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXVzdHJhbC50c3g=@Title": {
       "type": "object",
@@ -8135,6 +8507,19 @@
       ],
       "title": "deco-sites/suzteclibrary/components/ui/Instafeed.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvTXlBY2NvdW50LnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "Page": {
+          "type": "string",
+          "title": " Page"
+        }
+      },
+      "required": [
+        "Page"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/MyAccount.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvU2VvVGV4dC50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -8157,6 +8542,2451 @@
         "ctaLink"
       ],
       "title": "deco-sites/suzteclibrary/components/ui/SeoText.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyLnRzeA==@Card": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "number",
+          "description": "Number of card",
+          "title": "Number"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Image of card",
+          "title": "Image"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of card",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of card",
+          "title": "Description"
+        },
+        "CTA": {
+          "type": "string",
+          "description": "CTA of Card",
+          "title": " C T A"
+        },
+        "href": {
+          "type": "string",
+          "description": "href of Card",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "number",
+        "image",
+        "title",
+        "description",
+        "CTA",
+        "href"
+      ],
+      "title": "Card"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyLnRzeA==@Card[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyLnRzeA==@Card"
+      },
+      "title": "Card[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of section",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "description": "description of section",
+          "title": "Description"
+        },
+        "cards": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyLnRzeA==@Card[]",
+          "description": "Cards",
+          "title": "Cards"
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "cards"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/AsasParaVoar.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyTW9yZUluZm9yLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "videoUrlCode": {
+          "type": "string",
+          "title": "Video Url Code"
+        },
+        "videoLoop": {
+          "type": "boolean",
+          "title": "Video Loop"
+        },
+        "buttonName": {
+          "type": "string",
+          "title": "Button Name"
+        },
+        "buttonUrl": {
+          "type": "string",
+          "title": "Button Url"
+        }
+      },
+      "required": [
+        "videoUrlCode",
+        "videoLoop",
+        "buttonName",
+        "buttonUrl"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/AsasParaVoarMoreInfor.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ29udGVudEhvcml6b250YWwudHN4@ImageProps": {
+      "type": "object",
+      "properties": {
+        "srcMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Src Mobile"
+        },
+        "srcDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Src Desktop"
+        },
+        "alt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "descreva oque sua imagem está exibindo",
+          "title": "Alt"
+        },
+        "imagePosition": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Right"
+            },
+            {
+              "type": "string",
+              "const": "Center"
+            },
+            {
+              "type": "string",
+              "const": "Left"
+            }
+          ],
+          "type": "string",
+          "title": "Image Position"
+        },
+        "spectRatio": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Default"
+            },
+            {
+              "type": "string",
+              "const": "full screen"
+            },
+            {
+              "type": "string",
+              "const": "Compacted"
+            },
+            {
+              "type": "string",
+              "const": "Thumb"
+            }
+          ],
+          "type": "string",
+          "title": "Spect Ratio"
+        },
+        "paddingTopDesktop": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "distancia do topo no desktop, use qualquer unidade de medida valida em CSS",
+          "title": "Padding Top Desktop"
+        },
+        "paddingTopMobile": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "distancia do topo no mobile, use qualquer unidade de medida valida em CSS",
+          "title": "Padding Top Mobile"
+        },
+        "isLcp": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Is Lcp"
+        }
+      },
+      "required": [
+        "imagePosition",
+        "spectRatio"
+      ],
+      "title": "ImageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ29udGVudEhvcml6b250YWwudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "descriptionFontSizeMobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Description Font Size Mobile"
+        },
+        "descriptionFontSizeDesktop": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Description Font Size Desktop"
+        },
+        "descriptionTextColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description Text Color"
+        },
+        "descriptionClass": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description Class"
+        },
+        "ImageBlock": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ29udGVudEhvcml6b250YWwudHN4@ImageProps",
+          "title": " Image Block"
+        },
+        "textPosition": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Left"
+            },
+            {
+              "type": "string",
+              "const": "Right"
+            }
+          ],
+          "type": "string",
+          "title": "Text Position"
+        },
+        "enableButton": {
+          "type": "boolean",
+          "title": "Enable Button"
+        },
+        "buttonName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Name"
+        },
+        "buttonUrl": {
+          "type": "string",
+          "title": "Button Url"
+        },
+        "backgroundColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Background Color"
+        }
+      },
+      "required": [
+        "ImageBlock",
+        "textPosition",
+        "enableButton",
+        "buttonUrl"
+      ],
+      "title": "Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyUGFydG5lcnMudHN4@ImageProps": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Src"
+        },
+        "srcMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Src Mobile"
+        },
+        "alt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "descreva oque sua imagem está exibindo.",
+          "title": "Alt"
+        }
+      },
+      "required": [],
+      "title": "ImageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyUGFydG5lcnMudHN4@AsasParaVoarPartnersProps": {
+      "type": "object",
+      "properties": {
+        "BannerInfors": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ29udGVudEhvcml6b250YWwudHN4@Props",
+          "title": " Banner Infors"
+        },
+        "SectionSecundaryTitle": {
+          "type": "string",
+          "title": " Section Secundary Title"
+        },
+        "img": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyUGFydG5lcnMudHN4@ImageProps",
+          "title": "Img"
+        }
+      },
+      "required": [
+        "BannerInfors",
+        "SectionSecundaryTitle",
+        "img"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/AsasParaVoarPartners.tsx@AsasParaVoarPartnersProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyU3Vic2NyaWJlLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "subtitle": {
+          "type": "string",
+          "title": "Subtitle"
+        },
+        "buttonPrimary": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name"
+            },
+            "url": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Url"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "title": "Button Primary"
+        },
+        "buttonSecundary": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "Name"
+            },
+            "url": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Url"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "title": "Button Secundary"
+        },
+        "imageSrc": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Image Src"
+        },
+        "imageAltText": {
+          "type": "string",
+          "title": "Image Alt Text"
+        },
+        "backgroundColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Background Color"
+        }
+      },
+      "required": [
+        "title",
+        "subtitle",
+        "buttonPrimary",
+        "buttonSecundary",
+        "imageSrc",
+        "imageAltText"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/AsasParaVoarSubscribe.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyVGV4dEJsb2NrLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "BackgroundColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": " Background Color"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/AsasParaVoarTextBlock.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyVGV4dFdpdGhJbWFnZS50c3g=@ImageProps": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Src"
+        },
+        "alt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "descreva oque sua imagem está exibindo.",
+          "title": "Alt"
+        }
+      },
+      "required": [],
+      "title": "ImageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyVGV4dFdpdGhJbWFnZS50c3g=@TextWithImage": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle"
+        },
+        "subtitleImg": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyVGV4dFdpdGhJbWFnZS50c3g=@ImageProps",
+          "title": "Subtitle Img"
+        },
+        "paddingTopMobile": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Padding Top Mobile"
+        },
+        "paddingTopDesktop": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Padding Top Desktop"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/suzteclibrary/components/ui/AsasParaVoarTextWithImage.tsx@TextWithImage"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@ImageProps": {
+      "type": "object",
+      "properties": {
+        "imageMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Seu banner Mobile",
+          "title": "Image Mobile"
+        },
+        "imageDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Seu banner Desktop",
+          "title": "Image Desktop"
+        },
+        "altImage": {
+          "type": "string",
+          "description": "Texto Alternativo",
+          "title": "Alt Image"
+        },
+        "link": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Link para imagem",
+          "title": "Link"
+        }
+      },
+      "required": [
+        "imageMobile",
+        "imageDesktop",
+        "altImage"
+      ],
+      "title": "ImageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@VideoProps": {
+      "type": "object",
+      "properties": {
+        "videoPlatform": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Vimeo"
+            },
+            {
+              "type": "string",
+              "const": "Youtube"
+            }
+          ],
+          "type": "string",
+          "title": "Video Platform"
+        },
+        "videoUrlCodeMobile": {
+          "type": "string",
+          "description": "o código do vídeo que fica no final da url ex: 539309773",
+          "title": "Video Url Code Mobile"
+        },
+        "videoUrlCodeDesktop": {
+          "type": "string",
+          "description": "o código do vídeo que fica no final da url ex: 539309773",
+          "title": "Video Url Code Desktop"
+        },
+        "title": {
+          "type": "string",
+          "description": "O título do seu vídeo",
+          "title": "Title"
+        }
+      },
+      "required": [
+        "videoPlatform",
+        "videoUrlCodeMobile",
+        "videoUrlCodeDesktop",
+        "title"
+      ],
+      "title": "VideoProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@ImageProps|VideoProps": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@ImageProps"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@VideoProps"
+        }
+      ],
+      "title": "ImageProps|VideoProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Title": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": "Text"
+        },
+        "font": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "lusitana"
+            },
+            {
+              "type": "string",
+              "const": "nunito-sans"
+            },
+            {
+              "type": "string",
+              "const": "Roboto-ligth"
+            },
+            {
+              "type": "string",
+              "const": "Palatino"
+            }
+          ],
+          "type": "string",
+          "title": "Font"
+        }
+      },
+      "required": [
+        "text",
+        "font"
+      ],
+      "title": "Title"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Title[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Title"
+      },
+      "title": "Title[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Button": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Texto do botão",
+          "title": "Text"
+        },
+        "href": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Link do botão",
+          "title": "Href"
+        },
+        "color": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "blue"
+            },
+            {
+              "type": "string",
+              "const": "black"
+            },
+            {
+              "type": "string",
+              "const": "white"
+            },
+            {
+              "type": "string",
+              "const": "transparent"
+            },
+            {
+              "type": "string",
+              "const": "link"
+            }
+          ],
+          "type": "string",
+          "description": "Cor do botão",
+          "title": "Color"
+        }
+      },
+      "required": [
+        "color"
+      ],
+      "title": "Button"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Button[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Button"
+      },
+      "title": "Button[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Content": {
+      "type": "object",
+      "properties": {
+        "where": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Dentro"
+            },
+            {
+              "type": "string",
+              "const": "Fora"
+            }
+          ],
+          "type": "string",
+          "description": "Dentro ou fora da imagem?",
+          "title": "Where"
+        },
+        "title": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Title[]",
+          "description": "Textos",
+          "title": "Title"
+        },
+        "align": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "center"
+            },
+            {
+              "type": "string",
+              "const": "left"
+            },
+            {
+              "type": "string",
+              "const": "right"
+            }
+          ],
+          "type": "string",
+          "description": "Alinhamento dos botões",
+          "title": "Align"
+        },
+        "verticalAlign": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "center"
+            },
+            {
+              "type": "string",
+              "const": "top"
+            },
+            {
+              "type": "string",
+              "const": "bottom"
+            }
+          ],
+          "type": "string",
+          "description": "Alinhamento vertical",
+          "title": "Vertical Align"
+        },
+        "buttons": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Button[]",
+          "description": "Botões",
+          "title": "Buttons"
+        }
+      },
+      "required": [],
+      "title": "Content"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Padding": {
+      "type": "object",
+      "properties": {
+        "paddingLeft": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Margem interna esquerda",
+          "title": "Padding Left"
+        },
+        "paddingRight": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Margem interna direita",
+          "title": "Padding Right"
+        },
+        "paddingTop": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Margem interna cima",
+          "title": "Padding Top"
+        },
+        "paddingBottom": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Margem interna baixo",
+          "title": "Padding Bottom"
+        }
+      },
+      "required": [],
+      "title": "Padding"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Creative": {
+      "type": "object",
+      "properties": {
+        "creative": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@ImageProps|VideoProps",
+          "title": "Creative"
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "content": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Content",
+          "description": "Textos e Botões",
+          "title": "Content"
+        },
+        "padding": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Padding",
+          "description": "Margem interna",
+          "title": "Padding"
+        }
+      },
+      "required": [
+        "creative"
+      ],
+      "title": "Creative"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Creative[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Creative"
+      },
+      "title": "Creative[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Carousel": {
+      "type": "object",
+      "properties": {
+        "autoplay": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Autoplay"
+        },
+        "interval": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Intervalo de tempo para o Carrossel",
+          "title": "Interval"
+        }
+      },
+      "required": [],
+      "title": "Carousel"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Column": {
+      "type": "object",
+      "properties": {
+        "creativeCarousel": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Creative[]",
+          "description": "Suas imagens e vídeos",
+          "title": "Creative Carousel"
+        },
+        "carouselOptions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Carousel",
+          "description": "Carrossel automático",
+          "title": "Carousel Options"
+        }
+      },
+      "required": [
+        "creativeCarousel"
+      ],
+      "title": "Column"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Column[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Column"
+      },
+      "title": "Column[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "columns": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Column[]",
+          "description": "Colunas",
+          "title": "Columns"
+        },
+        "maxWidth": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Largura máxima total",
+          "title": "Max Width"
+        },
+        "maxColumnWidth": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Largura máxima de cada coluna",
+          "title": "Max Column Width"
+        },
+        "gap": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Distância entre colunas",
+          "title": "Gap"
+        },
+        "fullScreen": {
+          "type": "boolean",
+          "description": "Tela cheia",
+          "title": "Full Screen"
+        }
+      },
+      "required": [
+        "columns",
+        "fullScreen"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/BannerAviator.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ2F0ZWdvcnkudHN4@Banner": {
+      "type": "object",
+      "properties": {
+        "urlToDisplayBanner": {
+          "type": "string",
+          "description": "A categoria que deseja exibir este banner. Use /feminino/* para exibir o banner na categoria feminino",
+          "title": "Url To Display Banner"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "text to be rendered on top of the image",
+          "title": "Title"
+        },
+        "hiddenTitleSeo": {
+          "type": "boolean",
+          "description": "enable if you don't want to display the main text in the image and to maintain good SEO even with hidden text.",
+          "title": "Hidden Title Seo"
+        },
+        "bannerText": {
+          "type": "object",
+          "properties": {
+            "richtext": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+              "title": "Richtext"
+            },
+            "sizeDesktop": {
+              "type": "string",
+              "title": "Size Desktop"
+            },
+            "sizeMobile": {
+              "type": "string",
+              "title": "Size Mobile"
+            },
+            "moreStyles": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "More Styles"
+            }
+          },
+          "required": [
+            "richtext",
+            "sizeDesktop",
+            "sizeMobile"
+          ],
+          "title": "Banner Text",
+          "description": "text to be rendered on top of the image"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
+            },
+            "desktopWidth": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "title": "Desktop Width"
+            },
+            "desktopHeight": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "title": "Desktop Height"
+            },
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            },
+            "mobileWidth": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "title": "Mobile Width"
+            },
+            "mobileHeight": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "title": "Mobile Height"
+            },
+            "alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Alt"
+            },
+            "isLcp": {
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "title": "Is Lcp"
+            }
+          },
+          "required": [
+            "desktop"
+          ],
+          "title": "Image"
+        },
+        "isHeaderTransparent": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Is Header Transparent"
+        }
+      },
+      "required": [
+        "urlToDisplayBanner",
+        "hiddenTitleSeo",
+        "image"
+      ],
+      "title": "Banner"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ2F0ZWdvcnkudHN4@Banner[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ2F0ZWdvcnkudHN4@Banner"
+      },
+      "title": "Banner[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ2F0ZWdvcnkudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "title": "Page"
+        },
+        "banners": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ2F0ZWdvcnkudHN4@Banner[]",
+          "title": "Banners"
+        },
+        "activeBreadcrumb": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Active Breadcrumb"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/suzteclibrary/components/ui/BannerCategory.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ29udGVudE11bHQudHN4@ImageProps": {
+      "type": "object",
+      "properties": {
+        "srcMobileBanner1": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Src Mobile Banner1"
+        },
+        "srcMobileBanner2": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Src Mobile Banner2"
+        },
+        "srcDesktopFullBanner": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Src Desktop Full Banner"
+        },
+        "alt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "descreva oque sua imagem está exibindo",
+          "title": "Alt"
+        },
+        "spectRatio": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Default"
+            },
+            {
+              "type": "string",
+              "const": "full screen"
+            },
+            {
+              "type": "string",
+              "const": "Compacted"
+            },
+            {
+              "type": "string",
+              "const": "Thumb"
+            }
+          ],
+          "type": "string",
+          "title": "Spect Ratio"
+        },
+        "paddingTopDesktop": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "distancia do topo no desktop, use qualquer unidade de medida valida em CSS",
+          "title": "Padding Top Desktop"
+        },
+        "paddingTopMobile": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "distancia do topo no mobile, use qualquer unidade de medida valida em CSS",
+          "title": "Padding Top Mobile"
+        },
+        "isLcp": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Is Lcp"
+        }
+      },
+      "required": [
+        "spectRatio"
+      ],
+      "title": "ImageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ29udGVudE11bHQudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "ImageBlock": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ29udGVudE11bHQudHN4@ImageProps",
+          "title": " Image Block"
+        },
+        "contentDescription1": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Content Description1"
+        },
+        "contentDescription2": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Content Description2"
+        },
+        "backgroundColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Background Color"
+        }
+      },
+      "required": [
+        "ImageBlock"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/BannerContentMult.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyRG9iYmxlLnRzeA==@imageProps": {
+      "type": "object",
+      "properties": {
+        "desktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Upload da imagem da imagem desktop",
+          "title": "Desktop"
+        },
+        "mobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Upload da imagem da imagem mobile",
+          "title": "Mobile"
+        },
+        "width": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Width da imagem no desktop",
+          "title": "Width"
+        },
+        "height": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Altura da imagem no desktop",
+          "title": "Height"
+        },
+        "widthMobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Width da imagem no mobile",
+          "title": "Width Mobile"
+        },
+        "heightMobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Altura da imagem no mobile",
+          "title": "Height Mobile"
+        },
+        "altText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEO Image alt text",
+          "title": "Alt Text"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEO title",
+          "title": "Title"
+        },
+        "preload": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Preload de imagem - otimiza a métrica LCP",
+          "title": "Preload"
+        }
+      },
+      "required": [],
+      "title": "imageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyRG9iYmxlLnRzeA==@CTAProps": {
+      "type": "object",
+      "properties": {
+        "ctaName": {
+          "type": "string",
+          "description": "Defina o nome do botão",
+          "title": "Cta Name"
+        },
+        "ctaUrl": {
+          "type": "string",
+          "description": "Defina a url de destino do click no botão",
+          "title": "Cta Url"
+        },
+        "ctaVariant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "icon"
+            },
+            {
+              "type": "string",
+              "const": "primary"
+            },
+            {
+              "type": "string",
+              "const": "secondary"
+            },
+            {
+              "type": "string",
+              "const": "tertiary"
+            }
+          ],
+          "type": "string",
+          "description": "Selecione uma variação para o botão",
+          "title": "Cta Variant"
+        }
+      },
+      "required": [
+        "ctaName",
+        "ctaUrl",
+        "ctaVariant"
+      ],
+      "title": "CTAProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyRG9iYmxlLnRzeA==@BannerDobbleProps": {
+      "type": "object",
+      "properties": {
+        "MainBanner": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyRG9iYmxlLnRzeA==@imageProps",
+          "description": "Configurações do banner principal",
+          "title": " Main Banner"
+        },
+        "BannerTitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Titulo principal do banner em texto",
+          "title": " Banner Title"
+        },
+        "TitleFont": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Nunito"
+            },
+            {
+              "type": "string",
+              "const": "Lusitana"
+            }
+          ],
+          "type": "string",
+          "description": "Selecione uma fonte para o Title",
+          "title": " Title Font"
+        },
+        "BannerSubTitle": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Descrição curta para o banner",
+          "title": " Banner Sub Title"
+        },
+        "BannerSubTitleActive": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Deseja ativar a descrição curta no banner mobile ?",
+          "title": " Banner Sub Title Active"
+        },
+        "TextPosition": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Inicio"
+            },
+            {
+              "type": "string",
+              "const": "meio"
+            },
+            {
+              "type": "string",
+              "const": "final"
+            }
+          ],
+          "type": "string",
+          "description": "Posição do texto",
+          "title": " Text Position"
+        },
+        "TextColor": {
+          "type": "string",
+          "description": "Cor do texto em hexadecimal (ex: #ffffff)",
+          "title": " Text Color"
+        },
+        "TitleSizeDesktop": {
+          "type": "string",
+          "description": "Tamanho da fonte do título em resoluções desktop (ex: 24px)",
+          "title": " Title Size Desktop"
+        },
+        "TitleSizeMobile": {
+          "type": "string",
+          "description": "Tamanho da fonte do título em resoluções mobile (ex: 12px)",
+          "title": " Title Size Mobile"
+        },
+        "SubTitleSizeDesktop": {
+          "type": "string",
+          "description": "Tamanho da fonte do subtitulo em resoluções desktop (ex: 24px)",
+          "title": " Sub Title Size Desktop"
+        },
+        "SubTitleSizeMobile": {
+          "type": "string",
+          "description": "Tamanho da fonte do subtitulo em resoluções mobile (ex: 12px)",
+          "title": " Sub Title Size Mobile"
+        },
+        "buttonCallToAction": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyRG9iYmxlLnRzeA==@CTAProps",
+          "title": "Button Call To Action"
+        }
+      },
+      "required": [
+        "MainBanner",
+        "TitleFont",
+        "TextPosition",
+        "TextColor",
+        "TitleSizeDesktop",
+        "TitleSizeMobile",
+        "SubTitleSizeDesktop",
+        "SubTitleSizeMobile"
+      ],
+      "title": "BannerDobbleProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyRG9iYmxlLnRzeA==@BannerDobbleContainerProps": {
+      "type": "object",
+      "properties": {
+        "bannerPrimary": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyRG9iYmxlLnRzeA==@BannerDobbleProps",
+          "title": "Banner Primary"
+        },
+        "bannerSecundary": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyRG9iYmxlLnRzeA==@BannerDobbleProps",
+          "title": "Banner Secundary"
+        }
+      },
+      "required": [
+        "bannerPrimary",
+        "bannerSecundary"
+      ],
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerDobble.tsx@BannerDobbleContainerProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVySW5zdGl0dWNpb25hbC50c3g=@imageProps": {
+      "type": "object",
+      "properties": {
+        "desktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Upload da imagem da imagem desktop",
+          "title": "Desktop"
+        },
+        "mobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Upload da imagem da imagem mobile",
+          "title": "Mobile"
+        },
+        "height": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Altura da imagem no desktop",
+          "title": "Height"
+        },
+        "heightMobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Altura da imagem no mobile",
+          "title": "Height Mobile"
+        },
+        "altText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEO Image alt text",
+          "title": "Alt Text"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEO title",
+          "title": "Title"
+        },
+        "preload": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Preload de imagem - otimiza a métrica LCP",
+          "title": "Preload"
+        }
+      },
+      "required": [],
+      "title": "imageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVySW5zdGl0dWNpb25hbC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "MainBanner": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVySW5zdGl0dWNpb25hbC50c3g=@imageProps",
+          "description": "Configurações do banner principal",
+          "title": " Main Banner"
+        }
+      },
+      "required": [
+        "MainBanner"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/BannerInstitucional.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyU2luZ2xlLnRzeA==@BannerSingleContainerProps": {
+      "type": "object",
+      "properties": {
+        "bannerPrimary": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyRG9iYmxlLnRzeA==@BannerDobbleProps",
+          "title": "Banner Primary"
+        }
+      },
+      "required": [
+        "bannerPrimary"
+      ],
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerSingle.tsx@BannerSingleContainerProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSWZyYW1lVmlkZW8udHN4@videoUrlProps": {
+      "type": "object",
+      "properties": {
+        "videoPlatform": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Vimeo"
+            },
+            {
+              "type": "string",
+              "const": "Yutube"
+            }
+          ],
+          "type": "string",
+          "title": "Video Platform"
+        },
+        "videoUrlCode": {
+          "type": "string",
+          "description": "o código do vídeo que fica no final da url ex: 539309773",
+          "title": "Video Url Code"
+        },
+        "title": {
+          "type": "string",
+          "description": "O título do seu vídeo",
+          "title": "Title"
+        },
+        "modo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Tela Cheia"
+            },
+            {
+              "type": "string",
+              "const": "Cinema"
+            },
+            {
+              "type": "string",
+              "const": "Abaixo da seção superior"
+            }
+          ],
+          "type": "string",
+          "description": "Como deseja exibir seu vídeo",
+          "title": "Modo"
+        },
+        "loop": {
+          "type": "boolean",
+          "description": "habilite para rodar o vídeo infinitas vezes automáticamente",
+          "title": "Loop"
+        },
+        "controls": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Controls"
+        }
+      },
+      "required": [
+        "videoPlatform",
+        "videoUrlCode",
+        "title",
+        "loop"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/IframeVideo.tsx@videoUrlProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyV2l0aENUQS50c3g=@imageProps": {
+      "type": "object",
+      "properties": {
+        "desktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Upload da imagem da imagem desktop",
+          "title": "Desktop"
+        },
+        "mobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Upload da imagem da imagem mobile",
+          "title": "Mobile"
+        },
+        "width": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Width da imagem no desktop",
+          "title": "Width"
+        },
+        "height": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Altura da imagem no desktop",
+          "title": "Height"
+        },
+        "widthMobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Width da imagem no mobile",
+          "title": "Width Mobile"
+        },
+        "heightMobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Altura da imagem no mobile",
+          "title": "Height Mobile"
+        },
+        "altText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEO Image alt text",
+          "title": "Alt Text"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEO title",
+          "title": "Title"
+        },
+        "preload": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Preload de imagem - otimiza a métrica LCP",
+          "title": "Preload"
+        }
+      },
+      "required": [],
+      "title": "imageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyV2l0aENUQS50c3g=@CTAProps": {
+      "type": "object",
+      "properties": {
+        "ctaName": {
+          "type": "string",
+          "description": "Defina o nome do botão",
+          "title": "Cta Name"
+        },
+        "ctaUrl": {
+          "type": "string",
+          "description": "Defina a url de destino do click no botão",
+          "title": "Cta Url"
+        },
+        "ctaVariant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "icon"
+            },
+            {
+              "type": "string",
+              "const": "primary"
+            },
+            {
+              "type": "string",
+              "const": "secondary"
+            },
+            {
+              "type": "string",
+              "const": "tertiary"
+            }
+          ],
+          "type": "string",
+          "description": "Selecione uma variação para o botão",
+          "title": "Cta Variant"
+        }
+      },
+      "required": [
+        "ctaName",
+        "ctaUrl",
+        "ctaVariant"
+      ],
+      "title": "CTAProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyV2l0aENUQS50c3g=@BannerWithCTAProps": {
+      "type": "object",
+      "properties": {
+        "MainBanner": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyV2l0aENUQS50c3g=@imageProps",
+          "description": "Configurações do banner principal",
+          "title": " Main Banner"
+        },
+        "BannerTitle": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Titulo principal do banner em texto",
+          "title": " Banner Title"
+        },
+        "BannerSubTitle": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Descrição curta para o banner",
+          "title": " Banner Sub Title"
+        },
+        "BannerSubTitleActive": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Deseja ativar a descrição curta no banner mobile ?",
+          "title": " Banner Sub Title Active"
+        },
+        "TextPosition": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Inicio"
+            },
+            {
+              "type": "string",
+              "const": "meio"
+            },
+            {
+              "type": "string",
+              "const": "final"
+            }
+          ],
+          "type": "string",
+          "description": "Posição do texto",
+          "title": " Text Position"
+        },
+        "TextColor": {
+          "type": "string",
+          "description": "Cor do texto em hexadecimal (ex: #ffffff)",
+          "title": " Text Color"
+        },
+        "TitleSizeDesktop": {
+          "type": "string",
+          "description": "Tamanho da fonte em resoluções desktop (ex: 24px)",
+          "title": " Title Size Desktop"
+        },
+        "TitleSizeMobile": {
+          "type": "string",
+          "description": "Tamanho da fonte em resoluções mobile (ex: 12px)",
+          "title": " Title Size Mobile"
+        },
+        "SubTitleSizeDesktop": {
+          "type": "string",
+          "description": "Tamanho da fonte do subtitulo em resoluções desktop (ex: 24px)",
+          "title": " Sub Title Size Desktop"
+        },
+        "SubTitleSizeMobile": {
+          "type": "string",
+          "description": "Tamanho da fonte do subtitulo em resoluções mobile (ex: 12px)",
+          "title": " Sub Title Size Mobile"
+        },
+        "buttonCallToAction": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyV2l0aENUQS50c3g=@CTAProps",
+          "title": "Button Call To Action"
+        }
+      },
+      "required": [
+        "MainBanner",
+        "TextPosition",
+        "TextColor",
+        "TitleSizeDesktop",
+        "TitleSizeMobile",
+        "SubTitleSizeDesktop",
+        "SubTitleSizeMobile"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/BannerWithCTA.tsx@BannerWithCTAProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZENUQS50c3g=@imageProps": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Upload da imagem da imagem desktop",
+          "title": "Src"
+        },
+        "height": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Altura da imagem",
+          "title": "Height"
+        },
+        "altText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEO Image alt text",
+          "title": "Alt Text"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEO title",
+          "title": "Title"
+        },
+        "preload": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Preload de imagem - otimiza a métrica LCP",
+          "title": "Preload"
+        }
+      },
+      "required": [],
+      "title": "imageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZENUQS50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "Image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZENUQS50c3g=@imageProps",
+          "title": " Image"
+        },
+        "CardTitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Titulo que ficará centralizado no card",
+          "title": " Card Title"
+        },
+        "ButtonName": {
+          "type": "string",
+          "description": "Nome do botão",
+          "title": " Button Name"
+        },
+        "ButtonUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Defina a url de destino do click no botão",
+          "title": " Button Url"
+        },
+        "ButtonVariant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "icon"
+            },
+            {
+              "type": "string",
+              "const": "primary"
+            },
+            {
+              "type": "string",
+              "const": "secondary"
+            },
+            {
+              "type": "string",
+              "const": "tertiary"
+            }
+          ],
+          "type": "string",
+          "description": "Selecione uma variação para o botão",
+          "title": " Button Variant"
+        }
+      },
+      "required": [
+        "Image",
+        "ButtonName",
+        "ButtonVariant"
+      ],
+      "title": "Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZENUQS50c3g=@Props[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZENUQS50c3g=@Props"
+      },
+      "title": "Props[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZENUQS50c3g=@CardCTAProps": {
+      "type": "object",
+      "properties": {
+        "addNewCard": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZENUQS50c3g=@Props[]",
+          "title": "Cards"
+        }
+      },
+      "required": [
+        "addNewCard"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/CardCTA.tsx@CardCTAProps"
+    },
+    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher": {
+      "$ref": "#/root/matchers",
+      "title": "Matcher"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ29uZGl0aW9uYWwudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "matcher": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher",
+          "title": "Matcher"
+        },
+        "section": {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@Section",
+          "title": "Section"
+        }
+      },
+      "required": [
+        "matcher",
+        "section"
+      ],
+      "title": "deco-sites/suzteclibrary/sections/Aviator/Conditional.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@HTML": {
+      "type": "string",
+      "format": "html",
+      "title": "HTML"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvUXVpbGxUZXh0Q3VzdG9tU3R5bGVzLnRzeA==@ThemeStyles": {
+      "type": "object",
+      "properties": {
+        "SelectThemeStyle": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Default"
+            },
+            {
+              "type": "string",
+              "const": "Aviator"
+            },
+            {
+              "type": "string",
+              "const": "Aviator PIMA"
+            }
+          ],
+          "type": "string",
+          "title": " Select Theme Style"
+        }
+      },
+      "required": [],
+      "title": "ThemeStyles"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvUXVpbGxUZXh0LnRzeA==@ContentBlock": {
+      "type": "object",
+      "properties": {
+        "ContentEditor": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@HTML",
+          "description": "use este bloco para escrever o conteúdo do bloco.",
+          "title": " Content Editor"
+        },
+        "ThemeStyles": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvUXVpbGxUZXh0Q3VzdG9tU3R5bGVzLnRzeA==@ThemeStyles",
+          "description": "habilite para usar as cores e formatações do thema da loja",
+          "title": " Theme Styles"
+        }
+      },
+      "required": [
+        "ContentEditor",
+        "ThemeStyles"
+      ],
+      "title": "ContentBlock"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ29udGVudEJsb2NrRWRpdG9yLnRzeA==@ImageBlock": {
+      "type": "object",
+      "properties": {
+        "srcMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Src Mobile"
+        },
+        "srcDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdHlwZXMudHM=@Image",
+          "title": "Src Desktop"
+        },
+        "alt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "descreva oque sua imagem está exibindo",
+          "title": "Alt"
+        },
+        "imagePosition": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Right"
+            },
+            {
+              "type": "string",
+              "const": "Center"
+            },
+            {
+              "type": "string",
+              "const": "Left"
+            }
+          ],
+          "type": "string",
+          "title": "Image Position"
+        },
+        "spectRatio": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Default"
+            },
+            {
+              "type": "string",
+              "const": "full screen"
+            },
+            {
+              "type": "string",
+              "const": "Compacted"
+            },
+            {
+              "type": "string",
+              "const": "Thumb"
+            }
+          ],
+          "type": "string",
+          "title": "Spect Ratio"
+        },
+        "paddingTopDesktop": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "distancia do topo no desktop, use qualquer unidade de medida valida em CSS",
+          "title": "Padding Top Desktop"
+        },
+        "paddingTopMobile": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "distancia do topo no mobile, use qualquer unidade de medida valida em CSS",
+          "title": "Padding Top Mobile"
+        },
+        "isLcp": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Is Lcp"
+        }
+      },
+      "required": [
+        "imagePosition",
+        "spectRatio"
+      ],
+      "title": "ImageBlock"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ29udGVudEJsb2NrRWRpdG9yLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "ContentBlock": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvUXVpbGxUZXh0LnRzeA==@ContentBlock",
+          "title": " Content Block"
+        },
+        "ContentBlockHeight": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "0"
+            },
+            {
+              "type": "string",
+              "const": "auto"
+            }
+          ],
+          "type": "string",
+          "description": "altura do bloco de conteúdo, use qualquer unidade de medida valida em CSS",
+          "title": " Content Block Height"
+        },
+        "ContentBlockPaddingHorizontalDesktop": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "use isto para centralizar seu conteúdo, use qualquer unidade de medida valida em CSS",
+          "title": " Content Block Padding Horizontal Desktop"
+        },
+        "ContentBlockPaddingHorizontalMobile": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": " Content Block Padding Horizontal Mobile"
+        },
+        "ImageBlock": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ29udGVudEJsb2NrRWRpdG9yLnRzeA==@ImageBlock",
+          "title": " Image Block"
+        },
+        "BlockBackgroundColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "exemplo de uso #F3F3F3 ou red",
+          "title": " Block Background Color"
+        },
+        "BlockPaddingTopDesktop": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": " Block Padding Top Desktop"
+        },
+        "BlockPaddingTopMobile": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": " Block Padding Top Mobile"
+        },
+        "BlockMarginBottom": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": " Block Margin Bottom"
+        }
+      },
+      "required": [
+        "ContentBlock",
+        "ContentBlockHeight"
+      ],
+      "title": "deco-sites/suzteclibrary/sections/Aviator/ContentBlockEditor.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb0Jhbm5lci50c3g=@imageProps": {
+      "type": "object",
+      "properties": {
+        "desktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Upload da imagem da imagem desktop",
+          "title": "Desktop"
+        },
+        "mobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Upload da imagem da imagem mobile",
+          "title": "Mobile"
+        },
+        "width": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Largura da imagem no desktop",
+          "title": "Width"
+        },
+        "height": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Altura da imagem no dekstop",
+          "title": "Height"
+        },
+        "widthMobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Largura da imagem na versao mobile",
+          "title": "Width Mobile"
+        },
+        "heightMobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "Altura da imagem na versao mobile",
+          "title": "Height Mobile"
+        },
+        "altText": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEO Image alt text",
+          "title": "Alt Text"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "SEO title",
+          "title": "Title"
+        },
+        "preload": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Preload de imagem - otimiza a métrica LCP",
+          "title": "Preload"
+        }
+      },
+      "required": [],
+      "title": "imageProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb0Jhbm5lci50c3g=@CTAProps": {
+      "type": "object",
+      "properties": {
+        "ctaName": {
+          "type": "string",
+          "description": "Defina o nome do botão",
+          "title": "Cta Name"
+        },
+        "ctaUrl": {
+          "type": "string",
+          "description": "Defina a url de destino do click no botão",
+          "title": "Cta Url"
+        },
+        "ctaVariant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "icon"
+            },
+            {
+              "type": "string",
+              "const": "primary"
+            },
+            {
+              "type": "string",
+              "const": "secondary"
+            },
+            {
+              "type": "string",
+              "const": "tertiary"
+            }
+          ],
+          "type": "string",
+          "description": "Selecione uma variação para o botão",
+          "title": "Cta Variant"
+        }
+      },
+      "required": [
+        "ctaName",
+        "ctaUrl",
+        "ctaVariant"
+      ],
+      "title": "CTAProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb0Jhbm5lci50c3g=@HeroBannerProps": {
+      "type": "object",
+      "properties": {
+        "MainBanner": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb0Jhbm5lci50c3g=@imageProps",
+          "description": "Configurações do banner principal",
+          "title": " Main Banner"
+        },
+        "BannerTitle": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "description": "Titulo principal do banner em texto",
+          "title": " Banner Title"
+        },
+        "BannerSubTitle": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@HTML",
+          "title": " Banner Sub Title"
+        },
+        "TitleFont": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Nunito"
+            },
+            {
+              "type": "string",
+              "const": "Lusitana"
+            }
+          ],
+          "type": "string",
+          "description": "Selecione uma fonte para o Title",
+          "title": " Title Font"
+        },
+        "ImageTitle": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb0Jhbm5lci50c3g=@imageProps",
+          "description": "Carregue uma imagem como um titulo que fica sobre-posto ao banner principal",
+          "title": " Image Title"
+        },
+        "buttonCallToAction": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb0Jhbm5lci50c3g=@CTAProps",
+          "title": "Button Call To Action"
+        }
+      },
+      "required": [
+        "MainBanner",
+        "TitleFont"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/HeroBanner.tsx@HeroBannerProps"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvUHJvZHVjdEFkdmFuY2VkRGV0YWlscy50c3g=@BannerProp": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "text": {
+          "type": "string",
+          "title": "Text"
+        },
+        "side": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "left"
+            },
+            {
+              "type": "string",
+              "const": "right"
+            }
+          ],
+          "type": "string",
+          "title": "Side"
+        }
+      },
+      "required": [
+        "image",
+        "title",
+        "text",
+        "side"
+      ],
+      "title": "BannerProp"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvUHJvZHVjdEFkdmFuY2VkRGV0YWlscy50c3g=@BannerProp[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvUHJvZHVjdEFkdmFuY2VkRGV0YWlscy50c3g=@BannerProp"
+      },
+      "title": "BannerProp[]"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvUHJvZHVjdEFkdmFuY2VkRGV0YWlscy50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null",
+          "title": "Page"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "collectionId": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Collection Id"
+        },
+        "banners": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvUHJvZHVjdEFkdmFuY2VkRGV0YWlscy50c3g=@BannerProp[]",
+          "title": "Banners"
+        }
+      },
+      "required": [
+        "page",
+        "description",
+        "collectionId",
+        "banners"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/ProductAdvancedDetails.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvU2VhcmNoQ29udHJvbHMudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "title": "Page"
+        }
+      },
+      "required": [
+        "page"
+      ],
+      "title": "deco-sites/suzteclibrary/sections/Aviator/SearchControls.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvU2VhcmNoTm90Rm91bmQudHN4@TextSugestion": {
+      "type": "object",
+      "properties": {
+        "firstText": {
+          "type": "string",
+          "title": "First Text"
+        },
+        "secondText": {
+          "type": "string",
+          "title": "Second Text"
+        },
+        "thirdText": {
+          "type": "string",
+          "title": "Third Text"
+        }
+      },
+      "required": [
+        "firstText",
+        "secondText",
+        "thirdText"
+      ],
+      "title": "TextSugestion"
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvU2VhcmNoTm90Rm91bmQudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "textSugestions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvU2VhcmNoTm90Rm91bmQudHN4@TextSugestion",
+          "title": "Text Sugestions"
+        },
+        "products": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "title": "Products"
+        }
+      },
+      "required": [
+        "textSugestions",
+        "products"
+      ],
+      "title": "deco-sites/suzteclibrary/components/ui/SearchNotFound.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyUExQLnRzeA==@Banner": {
       "type": "object",
@@ -11669,10 +14499,6 @@
       "required": [],
       "title": "deco-cx/live/matchers/MatchHost.ts@Props"
     },
-    "ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher": {
-      "$ref": "#/root/matchers",
-      "title": "Matcher"
-    },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9tYXRjaGVyLnRz@Matcher[]": {
       "type": "array",
       "items": {
@@ -13377,6 +16203,43 @@
         }
       }
     },
+    "Li9pc2xhbmRzL0JhY2tUb1RvcC50c3g=": {
+      "title": "./islands/BackToTop.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/BackToTop.tsx"
+          ],
+          "default": "./islands/BackToTop.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0Jhbm5lckNhdGVnb3J5LnRzeA==": {
+      "title": "./islands/BannerCategory.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9zZWN0aW9uLnRz@SectionProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/BannerCategory.tsx"
+          ],
+          "default": "./islands/BannerCategory.tsx"
+        }
+      }
+    },
     "Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g=": {
       "title": "./islands/HeaderButton.tsx",
       "type": "object",
@@ -13422,6 +16285,27 @@
             "./islands/HeaderSearchbar.tsx"
           ],
           "default": "./islands/HeaderSearchbar.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0hlcm9TZWN0aW9uLnRzeA==": {
+      "title": "./islands/HeroSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb1NlY3Rpb24udHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/HeroSection.tsx"
+          ],
+          "default": "./islands/HeroSection.tsx"
         }
       }
     },
@@ -14129,6 +17013,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvTXlBY2NvdW50LnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Austral/MyAccount.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvTXlBY2NvdW50LnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Austral/MyAccount.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Austral/MyAccount.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvU2VvVGV4dC50c3g=": {
       "title": "deco-sites/suzteclibrary/sections/Austral/SeoText.tsx",
       "type": "object",
@@ -14147,6 +17052,537 @@
             "deco-sites/suzteclibrary/sections/Austral/SeoText.tsx"
           ],
           "default": "deco-sites/suzteclibrary/sections/Austral/SeoText.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyLnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoar.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoar.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoar.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyTW9yZUluZm8udHN4": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarMoreInfo.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyTW9yZUluZm9yLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarMoreInfo.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarMoreInfo.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyUGFydG5lcnMudHN4": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarPartners.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyUGFydG5lcnMudHN4@AsasParaVoarPartnersProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarPartners.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarPartners.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyU3Vic2NyaWJlLnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarSubscribe.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyU3Vic2NyaWJlLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarSubscribe.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarSubscribe.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyVGV4dEJsb2NrLnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarTextBlock.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyVGV4dEJsb2NrLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarTextBlock.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarTextBlock.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyVGV4dFdpdGhJbWFnZS50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarTextWithImage.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQXNhc1BhcmFWb2FyVGV4dFdpdGhJbWFnZS50c3g=@TextWithImage"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarTextWithImage.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/AsasParaVoarTextWithImage.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFja1RvVG9wLnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BackToTop.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/BackToTop.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/BackToTop.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyQXZpYXRvci50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerAviator.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQXZpYXRvci50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/BannerAviator.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/BannerAviator.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyQ2F0ZWdvcnkudHN4": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerCategory.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ2F0ZWdvcnkudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/BannerCategory.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/BannerCategory.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyQ29udGVudEhvcml6b250YWwudHN4": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerContentHorizontal.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ29udGVudEhvcml6b250YWwudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/BannerContentHorizontal.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/BannerContentHorizontal.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyQ29udGVudE11bHQudHN4": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerContentMult.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyQ29udGVudE11bHQudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/BannerContentMult.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/BannerContentMult.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyRG9iYmxlLnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerDobble.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyRG9iYmxlLnRzeA==@BannerDobbleContainerProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/BannerDobble.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/BannerDobble.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVySW5zdGl0dWNpb25hbC50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerInstitucional.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVySW5zdGl0dWNpb25hbC50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/BannerInstitucional.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/BannerInstitucional.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyU2luZ2xlLnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerSingle.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyU2luZ2xlLnRzeA==@BannerSingleContainerProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/BannerSingle.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/BannerSingle.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyVmlkZW8udHN4": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerVideo.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSWZyYW1lVmlkZW8udHN4@videoUrlProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/BannerVideo.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/BannerVideo.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyV2l0aENUQS50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/BannerWithCTA.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQmFubmVyV2l0aENUQS50c3g=@BannerWithCTAProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/BannerWithCTA.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/BannerWithCTA.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ2Fyb3VzZWxDYXRlZ29yeUNhcmRzU2VjdGlvbi50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/CarouselCategoryCardsSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvQ2FyZENUQS50c3g=@CardCTAProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/CarouselCategoryCardsSection.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/CarouselCategoryCardsSection.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ29uZGl0aW9uYWwudHN4": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/Conditional.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ29uZGl0aW9uYWwudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/Conditional.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/Conditional.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ29udGVudEJsb2NrRWRpdG9yLnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/ContentBlockEditor.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ29udGVudEJsb2NrRWRpdG9yLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/ContentBlockEditor.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/ContentBlockEditor.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvSGVyb0Jhbm5lci50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/HeroBanner.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb0Jhbm5lci50c3g=@HeroBannerProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/HeroBanner.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/HeroBanner.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvSGVyb1NlY3Rpb24udHN4": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/HeroSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvSGVyb0Jhbm5lci50c3g=@HeroBannerProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/HeroSection.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/HeroSection.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvUGx1Z2luVmxpYnJhcy50c3g=": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/PluginVlibras.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/PluginVlibras.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/PluginVlibras.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvUHJvZHVjdERldGFpbHNTZWN0aW9uLnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/ProductDetailsSection.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvUHJvZHVjdEFkdmFuY2VkRGV0YWlscy50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/ProductDetailsSection.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/ProductDetailsSection.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvU2VhcmNoQ29udHJvbHMudHN4": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/SearchControls.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvU2VhcmNoQ29udHJvbHMudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/SearchControls.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/SearchControls.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvU2VhcmNoTm90Rm91bmQudHN4": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/SearchNotFound.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L2NvbXBvbmVudHMvdWkvU2VhcmNoTm90Rm91bmQudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/SearchNotFound.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/SearchNotFound.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvWmVuZGVza0ludGVncmF0aW9uLnRzeA==": {
+      "title": "deco-sites/suzteclibrary/sections/Aviator/ZendeskIntegration.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/suzteclibrary/sections/Aviator/ZendeskIntegration.tsx"
+          ],
+          "default": "deco-sites/suzteclibrary/sections/Aviator/ZendeskIntegration.tsx"
         }
       }
     },
@@ -15492,6 +18928,12 @@
           "$ref": "#/definitions/Li9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
         },
         {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0JhY2tUb1RvcC50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0Jhbm5lckNhdGVnb3J5LnRzeA=="
+        },
+        {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
         },
         {
@@ -15499,6 +18941,9 @@
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlclNlYXJjaGJhci50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0hlcm9TZWN0aW9uLnRzeA=="
         },
         {
           "$ref": "#/definitions/Li9pc2xhbmRzL05ld3NsZXR0ZXIudHN4"
@@ -15630,7 +19075,88 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvSW5zdGFmZWVkLnRzeA=="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvTXlBY2NvdW50LnRzeA=="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F1c3RyYWwvU2VvVGV4dC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyTW9yZUluZm8udHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyUGFydG5lcnMudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyU3Vic2NyaWJlLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyVGV4dEJsb2NrLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQXNhc1BhcmFWb2FyVGV4dFdpdGhJbWFnZS50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFja1RvVG9wLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyQXZpYXRvci50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyQ2F0ZWdvcnkudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyQ29udGVudEhvcml6b250YWwudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyQ29udGVudE11bHQudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyRG9iYmxlLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVySW5zdGl0dWNpb25hbC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyU2luZ2xlLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyVmlkZW8udHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQmFubmVyV2l0aENUQS50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ2Fyb3VzZWxDYXRlZ29yeUNhcmRzU2VjdGlvbi50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ29uZGl0aW9uYWwudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvQ29udGVudEJsb2NrRWRpdG9yLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvSGVyb0Jhbm5lci50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvSGVyb1NlY3Rpb24udHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvUGx1Z2luVmxpYnJhcy50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvUHJvZHVjdERldGFpbHNTZWN0aW9uLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvU2VhcmNoQ29udHJvbHMudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvU2VhcmNoTm90Rm91bmQudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0F2aWF0b3IvWmVuZGVza0ludGVncmF0aW9uLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdXp0ZWNsaWJyYXJ5L3NlY3Rpb25zL0NhdGVnb3J5L0NhdGVnb3J5QmFubmVyLnRzeA=="
